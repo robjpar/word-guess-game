@@ -2,36 +2,56 @@
 <html lang="en">
 
 <head>
+    <title>Word Guess Game</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Guess Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+    <style>
+        .container-custom {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+            background: rgb(214, 255, 226);
+            margin-top: 5px;
+            padding: 10px;
+        }
+    </style>
 
 </head>
 
 <body>
-    <h1>Word Guess Game</h1>
+    <div class="container text-center container-custom">
+        <h1 class="text-primary">Word Guess Game</h1>
 
-    <h2>Animals of the North America</h2>
+        <h2 class="text-dark">Animals of the North America</h2>
 
-    <h3><span id="get-started"></span></h3>
+        <h3 class="text-warning"><span id="get-started"></span></h3>
 
-    <p>Wins</p>
-    <p><span id="wins"></span></p>
+        <p class="text-success">Wins</p>
+        <p class="text-success"><span id="wins"></span></p>
 
-    <p>Losses</p>
-    <p><span id="losses"></span></p>
+        <p class="text-danger">Losses</p>
+        <p class="text-danger"><span id="losses"></span></p>
 
-    <p>Current word</p>
-    <p><span id="current-word"></span></p>
+        <p class="text-secondary">Current word</p>
+        <p class="text-secondary"><span id="current-word"></span></p>
 
-    <p>Number of guesses remaining</p>
-    <p><span id="number-remaining"></span></p>
+        <p class="text-secondary">Number of guesses remaining</p>
+        <p class="text-secondary"><span id="number-remaining"></span></p>
 
-    <p>Letters already guessed</p>
-    <p><span id="letters-guessed"></span></p>
+        <p class="text-secondary">Letters already guessed</p>
+        <p class="text-secondary"><span id="letters-guessed"></span></p>
+
+        <img id="animal-image" class="rounded" width="300" style="display: none" src="#" alt="animal-image">
+        <p class="text-dark"><span id="animal-name"></span></p>
+
+    </div>
 
     <script src="assets/javascript/game.js"></script>
-    
+
 </body>
 
 </html>

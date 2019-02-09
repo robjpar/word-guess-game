@@ -17,6 +17,36 @@ document.getElementById("letters-guessed").textContent = lettersGuessed;
 const animals = ["beaver", "bear", "alligator", "moose", "butterfly", "armadillo",
     "titmouse", "wolf", "monster", "caribou", "hummingbird", "ferret"];
 
+const animalImages = [
+    "assets/images/beaver.jpg",
+    "assets/images/bear.jpg",
+    "assets/images/alligator.jpg",
+    "assets/images/moose.jpg",
+    "assets/images/butterfly.jpg",
+    "assets/images/armadillo.jpg",
+    "assets/images/titmouse.jpg",
+    "assets/images/wolf.jpg",
+    "assets/images/monster.jpg",
+    "assets/images/caribou.jpg",
+    "assets/images/hummingbird.jpg",
+    "assets/images/ferret.jpg"
+];
+
+const animalNames = [
+    "The American Beaver",
+    "The Brown Bear",
+    "The American Alligator",
+    "The American Moose",
+    "The Monarch Butterfly",
+    "The Nine-Banded Armadillo",
+    "The Tufted Titmouse",
+    "The Arctic Wolf",
+    "The Gila Monster",
+    "The Caribou",
+    "The Ruby-Throated Hummingbird",
+    "The Black-Footed Ferret"
+];
+
 var restart = true;
 var animal = "";
 const factor = 2; // Number of guesses allowed = factor * number of letters in the word
@@ -49,10 +79,16 @@ document.onkeydown = function (event) {
     if (restart) {
         getStarted = "";
         animal = animals[Math.floor(Math.random() * animals.length)];
-        currentWord = "_ ".repeat(animal.length - 1) + "_"; // Eg. "_ _ _ _ _"
+
+        // Initiate the word as eg. "_ _ _ _ _"
+        currentWord = "_ ".repeat(animal.length - 1) + "_";
+
         numberRemaining = parseInt(factor * animal.length);
         lettersGuessed = "";
         numberGuessed = 0;
+
+        document.getElementById("animal-image").style = "display: none";
+        document.getElementById("animal-name").textContent = "";
 
         restart = false;
 
@@ -84,13 +120,17 @@ document.onkeydown = function (event) {
             getStarted = message;
             wins++;
 
+            document.getElementById("animal-image").src = animalImages[animals.indexOf(animal)];
+            document.getElementById("animal-image").style = "display: initial";
+            document.getElementById("animal-name").textContent = animalNames[animals.indexOf(animal)];
+
             restart = true;
 
         } else { // Otherwise check if condition for loosing
             if (numberRemaining === 0) {
                 getStarted = message;
                 losses++;
-                
+
                 restart = true;
             }
         }
