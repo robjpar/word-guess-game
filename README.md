@@ -1,6 +1,6 @@
 # Word Guess Game
 
-Word Guess Game implemented with HTML, JavaScript, and CSS/Bootstrap. Utilizing Google Fonts. Guess the word by pressing the keys on the keyboard.
+Word Guess Game implemented with HTML, JavaScript, and CSS/Bootstrap. Utilizing Google Fonts. Guess the word by typing.
 
 ## How to use
 
